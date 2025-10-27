@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -36,7 +37,18 @@ public class ColaboradorControlador {
         model.addAttribute("colaborador", new Colaborador());
         return "formColaborador";
     }
-    
+
+    @PostMapping("/registrar")
+    public String grabar(Colaborador c, Model model){
+        System.out.println(c);
+        try {
+            service.save(c);
+            model.addAttribute("mensaje","Grabado correctamente");
+        } catch (Exception e) {
+            model.addAttribute("mensajeError","Error al grabar");
+        }
+        return "formColaborador";
+    }
     
     
 }

@@ -28,4 +28,16 @@ public class ColaboradorService {
     public Optional<Colaborador> get (int id){
         return daoColaborador.findById(id);
     }
+    
+    public String save(Colaborador c){
+        System.out.println("Entro al servicio");
+        System.out.println(c);
+        Colaborador col = daoColaborador.save(c);
+        System.out.println(col);
+        return (col == null)?"Error al registrar" : "";
+    }
+    
+    public void delete(int id){
+        daoColaborador.deleteById(id);
+    }
 }

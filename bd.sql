@@ -49,7 +49,7 @@ select
  Delete from material where idcategoria = 1;
  
 CREATE TABLE Colaborador(
-idcolaborador INT PRIMARY KEY AUTO_INCREMENT,
+idcolaborador INT PRIMARY KEY ,
 nombre VARCHAR(45) NOT NULL,
 correo VARCHAR(45) NOT NULL UNIQUE,
 telefono VARCHAR(45) NOT NULL
