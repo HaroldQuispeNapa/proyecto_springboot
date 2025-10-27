@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" class="bg-light" > 
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista de Colaboradores</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body class="m-3">
+        <a th:href="@{/nuevo}" >Nuevo</a>
+
+        <div class="container mt-5">
+            <h2 class="text-center mb-4 text-primary">Lista de Colaboradores</h2>
+
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <table class="table table-striped table-bordered text-center align-middle">
+                        <thead class="table-primary">
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Email</th>
+                                <th>Teléfono</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Ejemplo de datos de relleno -->
+                            <tr th:each="c : ${listaColaborador}">
+                                <td th:text="${c.codigo}"></td>
+                                <td th:text="${c.nombre}"></td>
+                                <td th:text="${c.correo}"></td>
+                                <td th:text="${c.telefono}"></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>

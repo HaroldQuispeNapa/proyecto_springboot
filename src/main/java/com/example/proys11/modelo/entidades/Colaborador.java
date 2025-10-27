@@ -6,6 +6,9 @@ package com.example.proys11.modelo.entidades;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 /**
@@ -13,11 +16,14 @@ import jakarta.persistence.Table;
  * @author LAB-USR-LNORTE
  */
 @Entity
-@Table
+@Table(name = "colaborador")
 public class Colaborador {
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
     @Column(name = "idcolaborador")
     private int codigo;
+    
     private String nombre;
     private String correo;
     private String telefono;
