@@ -48,8 +48,8 @@ select
  
  Delete from material where idcategoria = 1;
  
-drop TABLE Colaborador(
-idcolaborador INT PRIMARY KEY ,
+CREATE TABLE Colaborador(
+idcolaborador INT PRIMARY KEY AUTO_INCREMENT,
 nombre VARCHAR(45) NOT NULL,
 correo VARCHAR(45) NOT NULL UNIQUE,
 telefono VARCHAR(45) NOT NULL

@@ -15,6 +15,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-4">
+                
+                <h1>Formulario de Colaborador</h1>
+                <p th:if="${mensaje}" th:text="${mensaje}" style="color: green" ></p>
+                <p th:if="${mensajeError}" th:text="${mensajeError}" style="color: red" ></p>
+                
                 <form th:action="@{/registrar}" th:object="${colaborador}" method="post">                   
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre del Colaborador</label>
