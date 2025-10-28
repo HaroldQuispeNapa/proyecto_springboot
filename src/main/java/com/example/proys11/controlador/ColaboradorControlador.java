@@ -40,15 +40,17 @@ public class ColaboradorControlador {
 
     @PostMapping("/registrar")
     public String grabar(Colaborador c, Model model){
-        System.out.println(c);
+        System.out.println("🔹 Entró al método grabar");
         try {
             service.save(c);
             model.addAttribute("mensaje","Grabado correctamente");
         } catch (Exception e) {
-            model.addAttribute("mensajeError","Error al grabar");
+            e.printStackTrace(); // 👈 para ver el error exacto
+            model.addAttribute("mensajeError","Error al grabar: " + e.getMessage());
         }
         return "formColaborador";
     }
+
     
     
 }
